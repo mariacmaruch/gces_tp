@@ -26,7 +26,7 @@ jobs:
     - name: Build the Docker image
       run: docker-compose up -d
     - name: Run frontend tests
-      run: docker exec frontend bash -c "CI=true npm test --watchAll=false"
+      run: docker exec frontend npm test
     
   test-backend:
 
@@ -37,5 +37,5 @@ jobs:
     - name: Build the Docker image
       run: docker-compose up -d
     - name: Run backend tests
-      run: docker exec backend sh -c "python3 manage.py makemigrations ; python3 manage.py migrate"
+      run: docker exec backend sh -c "python3 manage.py makemigrations; python3 manage.py migrate; python3 manage.py test"
 

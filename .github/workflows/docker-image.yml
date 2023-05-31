@@ -26,4 +26,4 @@ jobs:
     - name: Build the Docker image
       run: docker-compose up -d
     - name: Run frontend tests
-      run: docker-compose exec frontend npm test
+      run: docker-compose exec -T frontend npm test

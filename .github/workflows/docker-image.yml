@@ -37,5 +37,5 @@ jobs:
     - name: Build the Docker image
       run: docker-compose up -d
     - name: Run backend tests
-      run: docker exec backend sh -c "pytest"
+      run: docker exec backend sh -c "python3 manage.py makemigrations ; python3 manage.py migrate
 

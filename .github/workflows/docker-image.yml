@@ -26,4 +26,4 @@ jobs:
     - name: Build the Docker image
       run: docker-compose up -d
     - name: Run frontend tests
-      run: docker-compose run frontend npm test
+      run: docker exec frontend bash -c "CI=true npm test --watchAll=false"

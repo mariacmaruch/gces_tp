@@ -1,6 +1,7 @@
 version: '3'
 services:
   frontend:
+    container_name: frontend
     build:
       context: ./library_front
       dockerfile: Dockerfile
@@ -9,6 +10,7 @@ services:
     depends_on:
       - backend
   backend:
+    container_name: backend
     build:
       context: ./library_back
       dockerfile: Dockerfile

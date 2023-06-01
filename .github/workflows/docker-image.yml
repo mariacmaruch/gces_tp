@@ -45,8 +45,6 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
-    - name: Install ESLint
-      run: npm install eslint --save-dev
     - name: Build the Docker image
       run: docker-compose up -d
     - name: Run ESLint

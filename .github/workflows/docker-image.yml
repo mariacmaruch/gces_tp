@@ -47,6 +47,8 @@ jobs:
     - uses: actions/checkout@v3
     - name: Build the Docker image
       run: docker-compose up -d
+    - name: Run ESLint
+      run: docker exec frontend sh -c "npx eslint src"
     - name: Run lint
       run: docker exec frontend npm run lint
 

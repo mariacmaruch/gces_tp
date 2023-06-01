@@ -38,4 +38,15 @@ jobs:
       run: docker-compose up -d
     - name: Run backend tests
       run: docker exec backend sh -c "python3 manage.py makemigrations; python3 manage.py migrate; python3 manage.py test"
+      
+  lint:
+      
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Build the Docker image
+      run: docker-compose up -d
+    - name: Run lint
+      run: docker exec frontend npm run lint
 
